@@ -8,7 +8,6 @@ def calculate_mean_variance(scores):
         return 0.0, 0.0
 
     scores_mean = mean(scores)
-    # Calculate population variance (not sample variance)
     variance = sum((x - scores_mean) ** 2 for x in scores) / n
     return scores_mean, variance
 
@@ -48,11 +47,10 @@ def main(argv):
         math_mean, math_variance = calculate_mean_variance(math_scores)
         japanese_mean, japanese_variance = calculate_mean_variance(japanese_scores)
 
-        # Print results with 6 decimal places
-        print(f"{math_mean}")
-        print(f"{math_variance}")
-        print(f"{japanese_mean}")
-        print(f"{japanese_variance}")
+        print(f"math_mean: {math_mean}")
+        print(f"math_variance: {math_variance}")
+        print(f"japanese_mean: {japanese_mean}")
+        print(f"japanese_variance: {japanese_variance}")
 
     except FileNotFoundError:
         print(f"Error: Could not find file {input_file}")
@@ -62,4 +60,5 @@ def main(argv):
         sys.exit(1)
 
 if __name__ == '__main__':
+    print(sys.argv[1:])
     main(sys.argv[1:])
