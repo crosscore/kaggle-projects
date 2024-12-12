@@ -49,7 +49,7 @@ def train_model_with_progress(X, y, test_size=0.2, random_state=42):
     progress_bar = tqdm(total=steps, desc="Training Progress")
 
     for _ in range(steps):
-        time.sleep(0.1)  # Simulate computation time
+        time.sleep(0.01)  # Simulate computation time
         progress_bar.update(1)
 
     # Actual model fitting
